@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Контакты | ES Beauty</title>
+    <meta name="description" content="Свяжитесь с нами: консультации, заказы, партнёрства.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="./index.html">ES Beauty</a>
+            <nav class="nav" id="mainNav">
+                <a href="./index.html">Главная</a>
+                <a href="./catalog.html">Каталог</a>
+                <a href="./services.html">Услуги</a>
+                <a href="./about.html">О нас</a>
+                <a class="active" href="./contact.html">Контакты</a>
+            </nav>
+            <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="container narrow">
+            <h1>Контакты</h1>
+            <p>Оставьте заявку — мы свяжемся с вами в ближайшее время.</p>
+            <div class="contact-direct">
+                <strong>Телефон:</strong> <a href="tel:+79602647308">+7 960 264-73-08</a>
+            </div>
+            <form id="form" class="contact-form" action="#" method="post">
+                <div class="row">
+                    <label>
+                        <span>Имя</span>
+                        <input type="text" name="name" required>
+                    </label>
+                    <label>
+                        <span>Телефон</span>
+                        <input type="tel" name="phone" required>
+                    </label>
+                </div>
+                <label>
+                    <span>Сообщение</span>
+                    <textarea name="message" rows="4" required></textarea>
+                </label>
+                <div class="row align-center">
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+                <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <a class="logo" href="./index.html">ES Beauty</a>
+                <p class="muted">Премиальная розничная торговля косметикой и парфюмерией.</p>
+            </div>
+            <ul class="footer-nav">
+                <li><a href="./about.html">О нас</a></li>
+                <li><a href="./services.html">Услуги</a></li>
+                <li><a href="./privacy.html">Политика</a></li>
+                <li><a class="active" href="./contact.html">Контакты</a></li>
+            </ul>
+            <div class="footer-contacts">
+                <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                <a href="mailto:esbeauty@mail.ru">esbeauty@mail.ru</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <span>© <span id="year"></span> ES Beauty. ИНН 246316040682. Тел.: +7 960 264-73-08. Все права защищены.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('.contact-form');
+            const status = document.getElementById('formStatus');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                status.textContent = 'Спасибо! Заявка отправлена.';
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>
+
+
